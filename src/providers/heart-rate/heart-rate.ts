@@ -51,8 +51,8 @@ export class HeartRateProvider {
               private storage: Storage,
               private http: HttpClient) {
 
-  this.url='https://murmuring-lowlands-95197.herokuapp.com/heart/';
- this.urluser= 'https://murmuring-lowlands-95197.herokuapp.com/user/';
+  this.url='URLAPI';
+ this.urluser= 'urluserAPI';
 
 
   }
