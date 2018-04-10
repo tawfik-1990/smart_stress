@@ -1,0 +1,39 @@
+<ion-menu side="left" id="myMenu" [content]="mycontent" persistent="true" >
+
+<ion-header>
+      <ion-toolbar >
+        <ion-title>
+          Menu
+         </ion-title>
+       </ion-toolbar>
+ </ion-header>
+
+     <ion-content>
+     <ion-card text-center class="hide-card">
+    <img src="assets/imgs/hrw.png" class="custom-avatar"/>
+    <p>Hallo ...</p>
+    <hr>
+</ion-card>
+        <ion-list>
+        <ion-item menuClose (click)="gotoKonto()">
+           <ion-icon name="md-person"></ion-icon>
+            Mein Konto
+          </ion-item>
+          <ion-item menuClose (click)="gotoEinstellung()">
+           <ion-icon name="md-settings"></ion-icon>
+             Einstellungen
+          </ion-item>
+           <ion-item menuClose (click)="gotoAbout()">
+             <ion-icon name="md-information-circle"></ion-icon>
+            About
+          </ion-item>
+           <ion-item menuClose (click)="gotoLogin()">
+            <ion-icon name="md-log-out" ></ion-icon>
+            Logout
+          </ion-item>
+        </ion-list>
+      </ion-content>
+</ion-menu>
+
+
+<ion-nav [root]="rootPage" #mycontent></ion-nav>

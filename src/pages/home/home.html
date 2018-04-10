@@ -1,0 +1,115 @@
+
+
+<ion-header>
+  <ion-toolbar>
+      <button ion-button icon-only menuToggle >
+        <ion-icon name="menu" color="weiss"></ion-icon>
+        <img src="assets/imgs/hrw.png" class="hrwicon"> 
+      </button>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="backgroundhome">
+ <ion-card class="card-color">
+   <ion-segment [(ngModel)]="charts">
+      <ion-segment-button value="Tag">
+        Tag
+      </ion-segment-button>
+      <ion-segment-button value="Woche">
+        Woche
+      </ion-segment-button>
+      <ion-segment-button value="Monat">
+        Monat
+      </ion-segment-button>
+    </ion-segment>
+
+
+<div [ngSwitch]="charts">
+  <ion-list *ngSwitchCase="'Tag'">
+    <div class="chart-pos">
+        <div style="display: block">
+          <canvas baseChart
+                  [datasets]="barChartData"
+                  [labels]="barChartLabels"
+                  [options]="barChartOptions"
+                  [colors]="barChartColors"
+                  [legend]="barChartLegend"
+                  [chartType]="barChartType"
+                  [colors]="barChartColors"
+                  (chartHover)="chartHovered($event)"
+                  (chartClick)="chartClicked($event)">
+           </canvas>
+        </div> 
+  </div>
+  <ion-label>Stress Messung durch den Tag </ion-label>
+  </ion-list>
+  </div>
+
+<div [ngSwitch]="charts">
+  <ion-list *ngSwitchCase="'Woche'">
+    <div class="chart-pos">
+        <div style="display: block">
+          <canvas baseChart
+                  [datasets]="barChartData"
+                  [labels]="barChartLabels"
+                  [options]="barChartOptions"
+                  [colors]="barChartColors"
+                  [legend]="barChartLegend"
+                  [chartType]="barChartType"
+                  (chartHover)="chartHovered($event)"
+                  (chartClick)="chartClicked($event)">
+           </canvas>
+        </div>
+  </div>
+   <ion-label> Stress Messung die Woche </ion-label>
+  </ion-list>
+  </div>
+
+<div [ngSwitch]="charts">
+  <ion-list *ngSwitchCase="'Monat'">
+    <div class="chart-pos">
+        <div style="display: block">
+          <canvas baseChart
+                  [datasets]="barChartData"
+                  [labels]="barChartLabels"
+                  [options]="barChartOptions"
+                  [colors]="barChartColors"
+                  [legend]="barChartLegend"
+                  [chartType]="barChartType"
+                  (chartHover)="chartHovered($event)"
+                  (chartClick)="chartClicked($event)">
+           </canvas>
+        </div>
+  </div>
+   <ion-label>Stress Messung für ganze Monat </ion-label>
+  </ion-list>
+  </div>
+
+</ion-card>
+ <ion-card (click)="openheartrate()"  >
+<ion-list>
+  <ion-item >
+    <ion-thumbnail item-start>
+      <img src="assets/imgs/heart.png">
+    </ion-thumbnail>
+    <h3>Herz frequenz</h3>
+    <button ion-button round class="button-puls">Puls</button>
+  </ion-item>
+</ion-list>
+</ion-card>
+      
+ <ion-card (click)="openTipps()">
+<ion-list>
+  <ion-item >
+    <ion-thumbnail item-start>
+      <img src="assets/imgs/tipps.gif" >
+    </ion-thumbnail>
+    <h3>Tipps zur Stressbewältigung</h3>
+    <h3>im Studium</h3>
+   <button ion-button round class="button-tipps">Tipps</button>
+  </ion-item>
+</ion-list>
+</ion-card>
+
+</ion-content>

@@ -1,0 +1,30 @@
+
+
+
+<ion-content class="background" >
+
+<img src="assets/imgs/hrw.png"/>
+<ion-card>
+  <ion-card-header>
+    LOGIN
+   </ion-card-header>
+   <ion-card-content>
+     <ion-list no-lines>
+       <ion-item>
+          <ion-label floating> Username</ion-label>
+         <ion-input [(ngModel)]="Username" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Passwort</ion-label>
+          <ion-input [(ngModel)]="Passwort" type="Password"></ion-input>
+        </ion-item>
+        <ion-item>
+        </ion-item>
+        <button ion-button color="primary" block outline (click)="openLogin()">LOGIN</button>
+         <button ion-button color="primary" block (click)="openSignup()">Signup</button>
+     </ion-list>
+    </ion-card-content>
+   </ion-card>
+
+  </ion-content>
+
